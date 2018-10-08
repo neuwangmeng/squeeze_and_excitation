@@ -37,10 +37,12 @@ class ChannelSELayer(nn.Module):
 
 class SpatialSELayer(nn.Module):
     """
-    Re-implementation of SE block -- squeezing spatially
+    Implementation of SE block -- squeezing spatially
     and exciting channel-wise described in::
     Roy et al., Concurrent Spatial and Channel Squeeze & Excitation
     in Fully Convolutional Networks, MICCAI 2018
+    Roy et al., Recalibrating Fully Convolutional Networks with Spatial
+    and Channel'Squeeze & Excitation'Blocks, IEEE TMI 2018
     """
 
     def __init__(self, num_channels):
@@ -61,10 +63,10 @@ class SpatialSELayer(nn.Module):
 
 class ChannelSpatialSELayer(nn.Module):
     """
-    Re-implementation of concurrent spatial and channel
-    squeeze & excitation::
-    Roy et al., Concurrent Spatial and Channel Squeeze & Excitation
-    in Fully Convolutional Networks, arXiv:1803.02579
+    Implementation of concurrent spatial and channel
+    squeeze & excitation: with Max-out aggregation
+    Roy et al., Recalibrating Fully Convolutional Networks with Spatial
+    and Channel'Squeeze & Excitation'Blocks, IEEE TMI 2018
     """
 
     def __init__(self, num_channels, reduction_ratio=2):
